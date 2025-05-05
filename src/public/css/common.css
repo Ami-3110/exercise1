@@ -1,0 +1,17 @@
+.header {
+    bockground:#f5f5f5;
+
+}
+
+.header__inner {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.header__logo {
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}

@@ -70,7 +70,7 @@ h2 {
     height: 30px;
     padding: 20px 20px;
     border: none;
-    color: #BEB1A6;
+    color: #8B7969;
     background-color: #F4F4F4;
     appearance: none;
 }
@@ -84,7 +84,7 @@ h2 {
 .category {
     margin: 20px 10px;
     padding: 5px 0;
-    color: #BEB1A6;
+    /*color: #8B7969;*/
     background-color: #F4F4F4;
 }
 

@@ -35,9 +35,9 @@
             <th class="form__label--item">性別<span class="form__label--required">※</span>
             </th>
             <td class="form__input--radio">
-              <input type="radio" name="gender" value="male" checked >男性
-              <input type="radio" name="gender" value="female" />女性
-              <input type="radio" name="gender" value="else" />その他
+              <input type="radio" name="gender" value="1" checked >男性
+              <input type="radio" name="gender" value="2" />女性
+              <input type="radio" name="gender" value="3" />その他
             </td>
           </tr>
            <tr class="form__error">
@@ -69,15 +69,25 @@
             <th class="form__label--item">電話番号<span class="form__label--required">※</span>
             </th>
             <td class="form__input--text">
-              <input type="tel" name="tel" placeholder="080" value="{{ old('tel') }}"/>-<input type="tel" name="tel" placeholder="1234" value="{{ old('tel') }}"/>-<input type="tel" name="tel" placeholder="5678" value="{{ old('tel') }}"/>
+              <input type="tel" name="tel1" placeholder="080" value="{{ old('tel1') }}"/>
+              -
+              <input type="tel" name="tel2" placeholder="1234" value="{{ old('tel2') }}"/>
+              -
+              <input type="tel" name="tel3" placeholder="5678" value="{{ old('tel3') }}"/>
             </td>
           </tr>
           <tr class="form__error">
             <th></th>
               <td class="form__error-message">
-              @error('tel')
-	            {{ $message }}
-	            @enderror
+              @error('tel1')
+              {{ $message }}
+              @enderror
+              @error('tel2')
+              {{ $message }}
+              @enderror
+              @error('tel3')
+              {{ $message }}
+              @enderror
               </td>
           </tr>
       
@@ -108,10 +118,10 @@
             <th class="form__label--item">お問い合わせの種類<span class="form__label--required">※</span>
             </th>
             <td class="form__input--text">
-              <select class="category" name="category">
+              <select class="category" name="category_id">
                 <option value="">選択してください</option>
                 @foreach($categories as $category)
-                <option value="{{ $category->id}}">{{ $category->content }}</option>
+                <option value="{{ $category->id }}">{{ $category->content }}</option>
                 @endforeach              
               </select>
             </td>

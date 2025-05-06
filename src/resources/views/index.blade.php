@@ -7,36 +7,46 @@
 <div class="contact-form__content">
       <div class="contact-form__heading">
        <h2>Contact</h2>
-      <form class="form" action="/contacts/first/" method="post">
+      <form class="form" action="/confirm/" method="post">
         @csrf
         <table class="form__table">
           <tr class="form__table-row">
             <th class="form__label--item">お名前<span class="form__label--required">※</span>
             </th>
             <td class="form__input--text">
-              <input type="text" name="name__last" placeholder="例: 山田" value="{{ old('name') }}"/>
-              <input type="text" name="name__first" placeholder="例: 太郎" value="{{ old('name') }}"/>
+              <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}"/>
+              <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}"/>
             </td>
           </tr>
           <tr class="form__error">
-            <!-- @error('name')
+            <th></th>
+              <td class="form__error-message">
+              @error('last_name')
 	            {{ $message }}
-	            @enderror -->
+              @enderror
+              @error('first_name')
+	            {{ $message }}
+	            @enderror
+
+              </td>
           </tr>
           
           <tr class="form__table-title">
             <th class="form__label--item">性別<span class="form__label--required">※</span>
             </th>
             <td class="form__input--radio">
-              <input type="radio" name="sex" value="male" checked >男性
-              <input type="radio" name="sex" value="female" />女性
-              <input type="radio" name="sex" value="else" />その他
+              <input type="radio" name="gender" value="male" checked >男性
+              <input type="radio" name="gender" value="female" />女性
+              <input type="radio" name="gender" value="else" />その他
             </td>
           </tr>
            <tr class="form__error">
-            <!--	@error('email')
+              <th></th>
+                <td class="form__error-message">
+              @error('gender')
 	            {{ $message }}
-	            @enderror -->
+	            @enderror
+                </td>
           </tr>
 
           <tr class="form__table-title">
@@ -47,22 +57,28 @@
             </td>
           </tr>
           <tr class="form__error">
-            <!--	@error('email')
+            <th></th>
+              <td class="form__error-message">
+              @error('email')
 	            {{ $message }}
-	            @enderror -->
+	            @enderror
+              </td>
           </tr>
 
           <tr class="form__table-title">
             <th class="form__label--item">電話番号<span class="form__label--required">※</span>
             </th>
             <td class="form__input--text">
-              <input type="tel" name="tel_prefix" placeholder="080" value="{{ old('tel_prefix') }}"/>-<input type="tel" name="tel_middle" placeholder="1234" value="{{ old('tel_middle') }}"/>-<input type="tel" name="tel_suffix" placeholder="5678" value="{{ old('tel_suffix') }}"/>
+              <input type="tel" name="tel" placeholder="080" value="{{ old('tel') }}"/>-<input type="tel" name="tel" placeholder="1234" value="{{ old('tel') }}"/>-<input type="tel" name="tel" placeholder="5678" value="{{ old('tel') }}"/>
             </td>
           </tr>
           <tr class="form__error">
-              <!--	@error('tel')
+            <th></th>
+              <td class="form__error-message">
+              @error('tel')
 	            {{ $message }}
-	            @enderror -->
+	            @enderror
+              </td>
           </tr>
       
           <tr class="form__table-title">
@@ -73,9 +89,12 @@
             </td>
           </tr>
           <tr class="form__error">
-              <!--	@error('address')
+            <th></th>
+              <td class="form__error-message">
+              @error('address')
 	            {{ $message }}
-	            @enderror -->
+	            @enderror
+              </td>
           </tr>
         
           <tr class="form__table-title">
@@ -91,10 +110,18 @@
             <td class="form__input--text">
               <select class="category" name="category">
                 <option value="">選択してください</option>
-                {{-- @foreach($categories as $category)
-                <option value="{{ $category->id}}">{{ $category->name }}</option>
-                @endforeach --}}              
+                @foreach($categories as $category)
+                <option value="{{ $category->id}}">{{ $category->content }}</option>
+                @endforeach              
               </select>
+            </td>
+          </tr>
+          <tr class="form__error">
+            <th></th>
+              <td class="form__error-message">
+              @error('category_id')
+	            {{ $message }}
+	            @enderror
             </td>
           </tr>
 
@@ -102,7 +129,15 @@
             <th class="form__label--item">お問い合わせ内容<span class="form__label--required">※</span>
             </th>
             <td class="form__input--textarea">
-              <textarea name="content" placeholder="お問い合わせ内容をご記載ください">{{ old('content') }}</textarea>
+              <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
+            </td>
+          </tr>
+          <tr class="form__error">
+            <th></th>
+            <td class="form__error-message">
+              @error('detail')
+	            {{ $message }}
+	            @enderror
             </td>
           </tr>
         </table>

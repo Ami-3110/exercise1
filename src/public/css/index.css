@@ -19,7 +19,6 @@ h2 {
 
 
 .form__table {
-    display: table;
     width: 70%;
     margin: 0 auto;
 }
@@ -42,9 +41,20 @@ h2 {
 
 .form__error {
     height: 30px;
-    color: #ff0000;
+    color: #FF9494;
 }
 
+/* 左寄せしたい
+.form__error {
+    display: inline-block;
+    text-align: left;
+}
+
+.form__error-message {
+    display: inline-block;
+    text-align: left;
+}
+*/
 
 .form__input--text {
     display: flex;

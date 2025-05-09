@@ -41,26 +41,21 @@ h2 {
     color: #FF9494;
 }
 
+/*左寄せしたい*/
 .form__error {
     height: 30px;
     color: #FF9494;
-}
-
-/* 左寄せしたい
-.form__error {
-    display: inline-block;
-    text-align: left;
-}
-
-.form__error-message {
-    display: inline-block;
-    text-align: left;
-}
-*/
-
-.form__input--text {
     display: flex;
 }
+/*
+.form__error-message {
+
+}
+
+.form__input--text {
+
+}
+*/
 
 .form__input--text input,
 .form__input--textarea textarea {

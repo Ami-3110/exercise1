@@ -1,45 +1,80 @@
-.register-form__content {
-    margin: 0 auto;
-    padding: 10px 15px;
-    max-width: 1230px;
-}
-
-.register-form__heading {
-    margin-bottom: 40px;
-    text-align: center;
+.header {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 h2 {
+    display: inline-block;
     color: #8B7969;
     font-family: "Inika", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-.form {
-    display: flex;
-    width: 70%;
-    margin: 0 auto;
+.header__nav {
+    position: absolute;
+    right: 50px;
+    margin: 20px 0;
     background-color: #F4F4F4;
+    border: solid 1px #D9C685;
+}
+
+.header__button {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #D9C685;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.register-form__content {
+    background-color: #F1ECE7;
+    max-width: 1320px;
+    padding-bottom: 90px;
+}
+
+.register-form__heading {
+    padding: 30px;
+    text-align: center;
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #FFFFFF;
+    border: solid 1px #C5B9B0;
 }
 
 .form__group {
-    width: 80%;
-    margin: 10px auto;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form__group-title {
+    padding-top: 10px;
 }
 
 .form__label--item {
+    margin: 10px;
     font-size: 16px;
     font-weight: lighter;
     text-align: left;
     color: #8B7969;
-    width: 30%;
 }
 
 .form__error {
     height: 30px;
     color: #FF9494;
-/* 左寄せしたい
+    /* 左寄せしたい
     display: inline-block;
     text-align: left;
     */
@@ -63,10 +98,11 @@ h2 {
 
 .form__button {
     margin-top: 50px;
+    text-align: center;
 }
 
 .form__button-submit {
-    padding: 5px 20px;
+    padding: 5px 5px;
     width: 15%;
     height: 30px;
     border: none;

@@ -21,10 +21,26 @@ class ContactController extends Controller
         return view('confirm', compact('tel','contact','category'));
         }
 
-    public function store(ContactRequest $request){
-        $contact = $request -> only(['last_name','first_name','gender','email','tel','address','building','category_id','detail']);
+    public function store(Request $request){
+        $contact = $request -> only(['category_id','last_name','first_name','gender','email','tel','address','building','detail']);
         Contact::create($contact);
         return view('thanks');
     }
+
+
+    public function admin(){
+        $contacts = Contact::all();
+        return view('admin', compact('contacts'));
+    }
+
+    public function search(Request $request){
+        $todos =Contact::with('category')->CategorySearch($request -> category_id) -> KeywordSearch($request -> keyword)->get();
+        $genders = Contact::
+        $categories = Category::all();
+        
+        return view('index', compact('todos', 'categories'));
+    }
+
+
 
 }

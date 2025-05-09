@@ -19,8 +19,15 @@
     <div class="header__inner">
       <h2>FashionablyLate</h2>
     </div>
+    @if (Auth::check())
+     <form action="/logout" method="post">
+      @csrf
+        <div class="header__nav">
+         <button class="header-nav__button">logout</button>
+         </div>
+     </form>
+    @endif
   </header>
-
   <main>
   @yield('content')
   </main>

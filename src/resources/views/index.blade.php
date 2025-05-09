@@ -35,9 +35,9 @@
             <th class="form__label--item">性別<span class="form__label--required">※</span>
             </th>
             <td class="form__input--radio">
-              <input type="radio" name="gender" value="1" checked >男性
-              <input type="radio" name="gender" value="2" />女性
-              <input type="radio" name="gender" value="3" />その他
+              <label><input type="radio" name="gender" value="1" checked />男性 </label>
+              <label><input type="radio" name="gender" value="2" />女性 </label>
+              <label><input type="radio" name="gender" value="3"  />その他 </label>
             </td>
           </tr>
            <tr class="form__error">

@@ -15,13 +15,21 @@
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お名前</th>
               <td class="confirm-table__text">
-                <input type="text" name="name" value="{{ $contact['last_name'].$contact['first_name'] }}" readonly/>
+                <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly/>
+                <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly/>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">性別</th>
               <td class="confirm-table__text">
-                <input type="text" name="name" value="{{ $contact['gender'] }}" readonly/>
+                <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
+                @if ($contact['gender'] === 1)
+                男性
+                @elseif ($contact['gender'] === 2)
+                女性
+                @else
+                その他
+                @endif
               </td>
             </tr>
             <tr class="confirm-table__row">
@@ -39,36 +47,36 @@
             <tr class="confirm-table__row">
               <th class="confirm-table__header">ご住所</th>
               <td class="confirm-table__text">
-                <input type="text" name="name" value="{{ $contact['address'] }}" readonly/>
+                <input type="text" name="address" value="{{ $contact['address'] }}" readonly/>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">建物名</th>
               <td class="confirm-table__text">
-                <input type="text" name="name" value="{{ $contact['building'] }}" readonly/>
+                <input type="text" name="building" value="{{ $contact['building'] }}" readonly/>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせの種類</th>
               <td class="confirm-table__text">
-                <input type="hidden" name="content" value="{{ $category->id }}" />
-                <input type="text" name="name" value="{{ $category->content }}" readonly/>
+                <input type="hidden" name="category_id" value="{{ $category['id'] }}" />{{ $category['content'] }}
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせ内容</th>
-              <td class="confirm-table__text">
-                
-                <input type="text" name="content" value="{{ $contact['detail'] }}" readonly/>
+              <td class="confirm-table__text">            
+                <input type="textarea" name="detail" value="{{ $contact['detail'] }}" readonly/>
               </td>
             </tr>
           </table>
         </div>
-        <div class="form__button">
-          <button class="form__button-submit" type="submit">送信</button>
+        <div class="button">
+            <div class="form__button">
+                <button class="form__button-submit" type="submit">送信</button>
+            </div>
+            <div class="form__button2">
+          <a class="form__button-return" href="history.back()">修正</a>
         </div>
-        <div class="form__button">
-          <button class="form__button-return" type="button" onClick="history.back()">修正</button>
         </div>
       </form>
     </div>

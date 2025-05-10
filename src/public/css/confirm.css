@@ -65,12 +65,15 @@ table th, td {
 .form__button-submit {
     color: #fff;
     background: #8B7969;
+    border: none;
+    outline: none;
+    appearance: none;
 }
 
 .form__button2 {
     margin: 50px auto;
     padding: 5px 20px;
-    display: inline-block
+    display: inline-block;
 }
 
 .form__button-return{
@@ -78,4 +81,6 @@ table th, td {
     text-decoration: none;
     background: #FFFFFF;
     color: #8B7969;
+    border: none;
+    outline: none;
 }

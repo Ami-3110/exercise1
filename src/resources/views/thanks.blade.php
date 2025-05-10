@@ -16,7 +16,7 @@
         <div class="thanks__items">
             <div class="thanks__content">お問い合わせありがとうございました</div>
             <div class=button>
-            <div class="button__inner" href="/login">HOME</div>
+            <a class="button__inner" href="/">HOME</div>
             </div>
         </div>
         <div class="background">Thank you</div>

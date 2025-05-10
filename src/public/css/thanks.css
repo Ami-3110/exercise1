@@ -23,6 +23,12 @@
     height: 20px;
     text-align: center;
     color: #fff;
+    text-decoration: none;
+    appearance: none;}
+
+.button__inner {
+    text-decoration: none;
+    appearance: none;
 }
 
 .background {

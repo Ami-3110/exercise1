@@ -21,7 +21,8 @@ h2 {
 .header__nav {
     position: absolute;
     right: 50px;
-    margin: 20px 0;
+    top: 40px;
+    margin: 0;
     background-color: #F4F4F4;
     border: solid 1px #D9C685;
 }
@@ -29,9 +30,134 @@ h2 {
 .header-nav__button {
     text-decoration: none;
     padding: 5px 10px;
-    color: #D9C685;
+    color: #D9C6B5;
     font-family: "Inika", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 12px;
+    border: none;
+}
+
+.search__line {
+    width: 75%;
+    margin: 0 auto;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form__item-input {
+    background-color: #FBFBFB;
+    color: #BEB1A6;
+    height: 40px;
+    width: 290px;
+    appearance: none;
+    border: solid 1px #BEB1A6;
+    text-align: center;
+    margin-right: 20px;
+}
+.search-form__item-gender{
+    background: #F4F4F4;
+    color: #BEB1A6;
+    height: 40px;
+    width: 80px;
+    border: solid 1px #BEB1A6;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.search-form__item-type {
+    background: #F4F4F4;
+    color: #BEB1A6;
+    height: 40px;
+    width: 170px;
+    border: solid 1px #BEB1A6;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.search-form__item-date {
+    background: #F4F4F4;
+    color: #BEB1A6;
+    height: 40px;
+    width: 120px;
+    border: solid 1px #BEB1A6;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.search__button-submit {
+    background-color: #8B7969;
+    color: #F4F4F4;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    border: none;
+    margin-right: 20px;
+}
+
+.reset__button-submit {
+    background-color: #D9C6B5;
+    color: #F4F4F4;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    border: none;
+}
+
+.option__line {
+    width: 75%;
+    margin: 30px auto;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+}
+
+.option__item-export{
+    background-color: #E1DBD6;
+    color: #8B7969;
+    height: 40px;
+    width: 100px;
+    border: none;
+}
+
+.admin-table {
+    margin: 20px auto;
+    width: 75%;
+}
+
+table tr {
+    border: solid 1px #BEB1A6;
+}
+
+.admin-table__inner{
+    width: 100%;
+}
+
+.admin-table__header{
+    background-color: #8B7969;
+    color: #FFFFFF;
+    height: 40px;
+    text-align: left;
+    padding: 0 40px;
+    font-weight: lighter;
+}
+
+.admin-table__item {
+    color: #8B7969;
+    height: 5cqi;
+    text-align: left;
+    padding: 0 40px;
+}
+
+.admin-table__detail-button {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #D9C6B5;
+    background-color: #F4F4F4;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    border: solid 1px #D9C685;
 }

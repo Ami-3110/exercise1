@@ -28,19 +28,6 @@ class ContactController extends Controller
     }
 
 
-    public function admin(){
-        $contacts = Contact::all();
-        return view('admin', compact('contacts'));
-    }
-
-    public function search(Request $request){
-        $todos =Contact::with('category')->CategorySearch($request -> category_id) -> KeywordSearch($request -> keyword)->get();
-        $genders = Contact::
-        $categories = Category::all();
-        
-        return view('index', compact('todos', 'categories'));
-    }
-
 
 
 }

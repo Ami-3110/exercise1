@@ -17,32 +17,31 @@
   <header class="header">
     <div class="header__inner">
       <h2>FashionablyLate</h2>
-    </div>
     @if (Auth::check())
-     <form action="/logout" method="post">
+     <form class="form" action="/logout" method="post">
       @csrf
-        <div class="header__nav">
-         <button class="header-nav__button">logout</button>
-         </div>
+      <div class="header__nav">
+        <button class="header-nav__button">logout</button>
+      </div>
      </form>
     @endif
+    </div>
   </header>
+
   <main>
     <div class="contact-form__content">
       <div class="contact-form__heading">
         <h2>Admin</h2>
       </div>
     </div>
-<form class="search-form" action="/admin/search" method="get">
+/*<form class="search-form" action="/admin/search" method="get">*/
   @csrf
   @method('search')
   <div class="search-form__item">
      <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old('keyword') }}"/>
      <select class="search-form__item-select" name="category_id">
        <option value="">性別</option>
-      @foreach($genders as $gender)
-      <option value="{{ $gender->/*id*/}}">{{ $gender->/*name*/ }}</option>
-      @endforeach
+
      </select>
      <select class="search-form__item-select" name="category_id">
        <option value="">お問い合わせの種類</option>
@@ -51,9 +50,7 @@
       @endforeach
      </select>
      <input type="data" class="search-form__item-select" name="category_id" value="" placeholder="年/月/日" />
-      @foreach($categories as $category)
-      <option value="{{ $category->id}}">{{ $category->name }}</option>
-      @endforeach
+
      </select>
    </div>
    /*Calender Search*/

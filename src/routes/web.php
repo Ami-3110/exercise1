@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,6 @@ Route::get('/admin/search',[ContactController::class, 'search']);
 
 
 Route::get('/register', [AdminController::class, 'index']);
-/*Route::middleware('auth')->group(function () {
-    Route::get('/register', [AdminController::class, 'index']);
-    });*/
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'admin']);
+ });

@@ -15,14 +15,12 @@ class AdminController extends Controller
     }
 
     public function admin(){
-        $contacts = Contact::with('category')->get();
+        $contacts = Contact::with('category')->paginate(7);
         $categories = Category::all();
-        
         return view('admin', compact('contacts','categories'));
     }
 
     public function search(Request $request){
-    $contacts = Contact::simplePaginate(7);
     $contacts = Contact::with('category') -> KeywordSearch($request -> keyword) -> GenderSearch($request -> gender) -> CategorySearch($request -> category_id) -> DateSearch($request -> created_at)->get();
     $categories = Category::all();
     return view('admin', compact('contacts', 'categories'));

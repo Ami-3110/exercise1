@@ -100,7 +100,7 @@
           {{ $contact['email'] }}
         </td>
         <td class="admin-table__item">
-          {{ $category['content'] }}
+          {{ $contact->category->content }}
         </td>
         <td>
           <button class="admin-table__detail-button">詳細</button>

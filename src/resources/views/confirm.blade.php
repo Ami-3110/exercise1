@@ -23,9 +23,9 @@
               <th class="confirm-table__header">性別</th>
               <td class="confirm-table__text">
                 <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
-                @if ($contact['gender'] === 1)
+                @if ($contact['gender'] == 1)
                 男性
-                @elseif ($contact['gender'] === 2)
+                @elseif ($contact['gender'] == 2)
                 女性
                 @else
                 その他

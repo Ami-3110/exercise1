@@ -73,9 +73,13 @@
           <tr class="form__error">
             <th></th>
               <td class="form__error-message">
-              @error('tel')
-              {{ $message }}
-              @enderror
+              @if ($errors -> has('tel1'))
+              {{$errors -> first('tel1')}}
+              @elseif ($errors -> has('tel2'))
+              {{$errors -> first('tel2')}}
+              @else
+              {{$errors -> first('tel3')}}
+              @endif
               </td>
           </tr>
       

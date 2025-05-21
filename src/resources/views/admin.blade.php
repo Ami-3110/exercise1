@@ -61,7 +61,7 @@
 
     <div class="option__line">
       <button class="option__item-export">エクスポート</button>
-      <div class="pagenation"></div>
+      {{-- $contacts->appends(request()->query())->links('vendor.pagination.custom') --}}
     </div>
 
  <div class="admin-table">

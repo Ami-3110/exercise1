@@ -52,36 +52,40 @@
             <option value="{{ $category->id}}">{{ $category->content }}</option>
             @endforeach
           </select>
-          <input type="text" class="search-form__item-date" id="" name="created_at" value="" placeholder="年/月/日" />
-          <button class="search__button-submit" type="submit">検索</button>
-          <button class="reset__button-submit" type="reset">リセット</button>
+          <input type="date" class="search-form__item-date" name="date" value="{{request('date')}}" placeholder="年/月/日" />
+          <div class="search-form__actions">
+            <input class="search__button-submit" type="submit" value="検索" />
+            <input class="reset__button-submit" type="reset" value="リセット" />
+          </div>
         </div>
       </form>
     </div>
 
     <div class="option__line">
-      <button class="option__item-export">エクスポート</button>
+      <form action="{{'/export?'.http_build_query(request()->query())}}" method="post">
+        @csrf
+        <input class="export__btn btn" type="submit" value="エクスポート">
+      </form>
       {{-- $contacts->appends(request()->query())->links('vendor.pagination.custom') --}}
     </div>
 
- <div class="admin-table">
-    <table class="admin-table__inner">
+    <table class="admin-table">
       <tr class="admin-table__row">
         <th class="admin-table__header">
-         <span class="admin-table__header-span">お名前</span>
+        <span class="admin-table__header-span">お名前</span>
         </th>
         <th class="admin-table__header">
-         <span class="admin-table__header-span">性別</span>
+        <span class="admin-table__header-span">性別</span>
         </th>
         <th class="admin-table__header">
-         <span class="admin-table__header-span">メールアドレス</span>
+        <span class="admin-table__header-span">メールアドレス</span>
         </th>
         <th class="admin-table__header">
-         <span class="admin-table__header-span">お問い合わせの種類</span>
+        <span class="admin-table__header-span">お問い合わせの種類</span>
         </th>
         <th class="admin-table__header"></th>
       </tr>
-        @foreach($contacts as $contact)
+      @foreach($contacts as $contact)
       <tr class="admin-table__row">
         <td class="admin-table__item">
           {{ $contact['last_name'] }}
@@ -103,12 +107,73 @@
           {{ $contact->category->content }}
         </td>
         <td>
-          <button class="admin-table__detail-button">詳細</button>
+          <button class="admin-table__detail-button"><a class="admin__detail-btn" href="#{{$contact->id}}">詳細</a></button>
         </td>
       </tr>
-      @endforeach
-      </table>
- </div>
+
+
+          <div class="modal" id="{{$contact->id}}">
+            <a href="#!" class="modal-overlay"></a>
+            <div class="modal__inner">
+              <div class="modal__content">
+                <form class="modal__detail-form" action="/delete" method="post">
+                  @csrf
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">お名前</label>
+                    <p>{{$contact->first_name}}{{$contact->last_name}}</p>
+                  </div>
+
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">性別</label>
+                    <p>
+                      @if($contact->gender == 1)
+                      男性
+                      @elseif($contact->gender == 2)
+                      女性
+                      @else
+                      その他
+                      @endif
+                    </p>
+                  </div>
+
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">メールアドレス</label>
+                    <p>{{$contact->email}}</p>
+                  </div>
+
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">電話番号</label>
+                    <p>{{$contact->tell}}</p>
+                  </div>
+
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">住所</label>
+                    <p>{{$contact->address}}</p>
+                  </div>
+
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">お問い合わせの種類</label>
+                    <p>{{$contact->category->content}}</p>
+                  </div>
+
+                  <div class="modal-form__group">
+                    <label class="modal-form__label" for="">お問い合わせ内容</label>
+                    <p>{{$contact->detail}}</p>
+                  </div>
+                  <input type="hidden" name="id" value="{{ $contact->id }}">
+                  <input class="modal-form__delete-btn btn" type="submit" value="削除">
+
+                </form>
+              </div>
+
+              <a href="#" class="modal__close-btn">×</a>
+            </div>
+          </div>
+          @endforeach
+        </table>
+
+
+      </div>
 
 
   </main>

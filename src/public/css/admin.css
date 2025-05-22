@@ -85,6 +85,33 @@ h2 {
     text-align: center;
     margin-right: 20px;
 }
+.ssearch-form__item-date::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: auto;
+    height: auto;
+    background: transparent;
+}
+.search-form__item-date::after {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid #BEB1A6;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    content: "";
+    transform: translateY(-50%);
+}
+.search-form__actions {
+    display: flex;
+
+    gap: 24px; }
 
 .search__button-submit {
     background-color: #8B7969;
@@ -151,13 +178,89 @@ table tr {
 }
 
 .admin-table__detail-button {
-    text-decoration: none;
     padding: 5px 10px;
-    color: #D9C6B5;
     background-color: #F4F4F4;
+    border: solid 1px #D9C685;
+}
+
+
+.admin__detail-btn {
+    text-decoration: none;
     font-family: "Inika", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
-    border: solid 1px #D9C685;
+    color: #D9C6B5;
 }
+
+/* モーダル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    border: 1px solid #8B7969;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px rgba(139, 121, 105, 0.25);
+    transform: translate(-50%, -50%);
+}
+
+.modal__content {
+    position: relative;
+    padding: 64px 64px;
+}
+
+.modal-form__group {
+    display: grid;
+    margin-top: 32px;
+
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.modal-form__label {
+    font-weight: bold;
+}
+
+.modal-form__delete-btn {
+    margin: 64px auto 0;
+    background-color: #BA370D;
+    color: #FFF;
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #8B7969;
+    border-radius: 50%;
+    color: #8B7969;
+    text-align: center;
+    text-decoration: none;
+    }

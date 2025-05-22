@@ -62,11 +62,15 @@
     </div>
 
     <div class="option__line">
+      <div class="option__item-export">
       <form action="{{'/export?'.http_build_query(request()->query())}}" method="post">
         @csrf
         <input class="export__btn btn" type="submit" value="エクスポート">
       </form>
-      {{-- $contacts->appends(request()->query())->links('vendor.pagination.custom') --}}
+      </div>
+      <div class="option__item-pagination">
+      {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
+      </div>
     </div>
 
     <table class="admin-table">

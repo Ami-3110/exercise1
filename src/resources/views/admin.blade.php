@@ -37,7 +37,6 @@
     <div class="search__line">
       <form class="search-form" action="/admin/search" method="get">
         @csrf
-        @method('search')
         <div class="search-form__item">
           <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old('keyword') }}"/>
           <select class="search-form__item-gender" name="gender">
